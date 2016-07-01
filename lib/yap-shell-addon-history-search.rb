@@ -74,6 +74,7 @@ module YapShellAddonHistorySearch
         @keys.bind(:ctrl_n){ search_again_forward }
         @keys.bind(:ctrl_a){ @line.move_to_beginning_of_input }
         @keys.bind(:ctrl_e){ @line.move_to_end_of_input }
+        @keys.bind(:ctrl_k){ @line.kill_forward }
         @keys.bind(:backspace) do
           @line.delete_left_character
           perform_search(type: @last_search_was)
